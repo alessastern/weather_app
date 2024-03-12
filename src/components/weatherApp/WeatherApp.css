@@ -1,6 +1,7 @@
 :root {
   --blue: rgb(213, 230, 255);
   --pink: rgb(255, 235, 250);
+  --darkblue: rgb(1, 132, 255);
 }
 
 .container {
@@ -22,7 +23,7 @@
 .top-bar input {
   display: flex;
   width: 15rem;
-  height: 3.5rem;
+  height: 3.8rem;
   background: white;
   border: none;
   outline: none;
@@ -39,4 +40,50 @@
   width: 64px;
   height: 64px;
   cursor: pointer;
+}
+
+.weather-image {
+  display: flex;
+  justify-content: center;
+  margin-top: 6rem;
+}
+
+.weather-temp {
+  display: flex;
+  justify-content: center;
+  color: var(--darkblue);
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.weather-location {
+  display: flex;
+  justify-content: center;
+  color: var(--darkblue);
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.data-container {
+  margin-top: 5rem;
+  color: var(--darkblue);
+  display: flex;
+  justify-content: center;
+}
+
+.element {
+  margin: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+}
+
+.data {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.text {
+  font-size: 20px;
+  font-weight: 400;
 }
