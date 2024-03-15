@@ -8,6 +8,7 @@ const WeatherApp = () => {
     <div className="container">
       <SearchBar />
       <WeatherScreen />
+      <div className="credits">icons by iconixar</div>
     </div>
   );
 };
