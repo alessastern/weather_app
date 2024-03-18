@@ -2,12 +2,15 @@ import React from "react";
 import "./WeatherApp.css";
 import SearchBar from "../modules/SearchBar";
 import WeatherScreen from "../modules/WeatherScreen";
+import { ContextProvider } from "../modules/WeatherContext";
 
 const WeatherApp = () => {
   return (
     <div className="container">
-      <SearchBar />
-      <WeatherScreen />
+      <ContextProvider>
+        <SearchBar />
+        <WeatherScreen />
+      </ContextProvider>
       <div className="credits">icons by iconixar</div>
     </div>
   );

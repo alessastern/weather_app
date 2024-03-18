@@ -1,9 +1,8 @@
 class Api {
-  constructor(headers) {
+  constructor(headers, api_key) {
     this._headers = headers;
+    this.apiKey = api_key;
   }
-
-  apiKey = "319acb9eb85f122885fa2f5bb3011a96";
 
   checkResponse(res) {
     return new Promise((resolve, reject) => {
@@ -16,8 +15,13 @@ class Api {
     });
   }
 
-  search = () => {};
+  search = (url) => {
+    return fetch(url).then(this.checkResponse);
+  };
 }
-export default new Api({
-  "content-type": "application/json",
-});
+export default new Api(
+  {
+    "content-type": "application/json",
+  },
+  "319acb9eb85f122885fa2f5bb3011a96"
+);
