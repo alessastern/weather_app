@@ -5,7 +5,7 @@ import { useContext, useState } from "react";
 import WeatherContext from "./WeatherContext";
 
 export default function SearchBar() {
-  const { setLocation, setTemp, setHumidity, setWind } =
+  const { setLocation, setTemp, setHumidity, setWind, manageIcon } =
     useContext(WeatherContext);
 
   const [value, setValue] = useState("");
@@ -31,9 +31,10 @@ export default function SearchBar() {
           value &&
             api.search(url).then((data) => {
               setLocation(data.name);
-              setTemp(data.main.temp + "°C");
+              setTemp(Math.round(data.main.temp) + "°C");
               setHumidity(data.main.humidity + " %");
-              setWind(data.wind.speed + " km/h");
+              setWind(Math.round(data.wind.speed) + " km/h");
+              manageIcon(data.weather[0].icon);
               setValue("");
             });
         }}
